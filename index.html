@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YourWeather</title>
+    <link rel="stylesheet" href="./src/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+
+  <body>
+    <div class="logo-row">
+      <a href="index.html">
+        <img src="src/images/logo.png" alt="YourWeather" class="logo" />
+      </a>
+    </div>
+
+    <form class="search-bar">
+      <div class="search">
+        <span class="material-symbols-outlined"> menu </span>
+        <input
+          class="search-box"
+          type="search"
+          placeholder="Cities, Regions, or Countries"
+          autocomplete="off" id="valueSearch"
+        />
+        <span class="search-icon material-symbols-outlined"> search </span>
+      </div>
+    </form>
+
+    <div class="weather-tabs">
+      <div class="tabs-header">
+        <div class="active">Today</div>
+        <div>Forecast</div>
+        <div>Past Weather</div>
+        <div>Alerts</div>
+      </div>
+      <div class="tabs-indicator"></div>
+      <div class="tabs-body">
+        <div class="active">
+
+          <main class="today-weather">
+
+            <section class="display-tw">
+
+              <figure class="country" id="city"><figcaption>Texas</figcaption>
+              <img src="https://flagsapi.com/LK/flat/64.png" alt="">
+            </figure>
+              <figure class="temp" id="temp">
+                <img src="https://img.icons8.com/?size=48&id=c0Otgmp74zQX&format=png" alt="">
+                <figcaption>
+                  <span>31</span>
+                  <sup>o</sup>
+                </figcaption>
+              </figure>           
+  
+            <p class="description">
+              Overcast clouds
+            </p>
+
+            <ul>
+              <li>
+              <span>Clouds</span>
+              <span class="material-symbols-outlined">
+                cloud
+                </span>
+              <span id ="clouds">98</span>%
+              </li>
+              <li>
+                <span>Humidity</span>
+                <span class="material-symbols-outlined">
+                  water_drop
+                  </span>
+                <span id="humidity">55</span>%
+              </li>
+              <li>
+                <span>Pressure</span>
+                <span class="material-symbols-outlined">
+                  readiness_score
+                  </span>
+                <span id="pressure">1001</span>hPa
+              </li>
+            </ul>
+            </section>
+          </main>
+     
+        </div>
+        <div>
+          <h1>Forecast</h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam
+            provident error eum optio tempore quod dolorum temporibus vitae amet
+            modi incidunt delectus nobis quasi, repellat architecto, tempora
+            quam animi porro.
+          </p>
+        </div>
+        <div>
+          <h1>Past Weather</h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam
+            provident error eum optio tempore quod dolorum temporibus vitae amet
+            modi incidunt delectus nobis quasi, repellat architecto, tempora
+            quam animi porro.
+          </p>
+        </div>
+        <div>
+          <h1>Alerts</h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam
+            provident error eum optio tempore quod dolorum temporibus vitae amet
+            modi incidunt delectus nobis quasi, repellat architecto, tempora
+            quam animi porro.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="src/scripts/scripts.js"></script>
+  </body>
+</html>
