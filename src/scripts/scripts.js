@@ -27,28 +27,6 @@
  let form = document.querySelector('form');
 
 
-// form.addEventListener('submit', (event) => {
-//     event.preventDefault();
-//     if (valueSearch.value !== '') {
-//         searchWeather();
-//     }
-// });
-
-// let apiKey = 'ce6b403d12df47b2bc5133711241009';
-// let url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Nochchiyagama`; 
-
-// const searchWeather = () => {
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data);
-//             if(data.cod == 200){
-//                 city.querySelector('figcaption').innerText = data.name;
-//             }
-//         })
-// }
-
-
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     if (valueSearch.value !== '') {
@@ -57,19 +35,39 @@ form.addEventListener('submit', (event) => {
 });
 
 const searchWeather = (query) => {
-    // Construct the URL with the user-provided query
+
     let url = `${'http://api.weatherapi.com/v1/current.json'}?key=${'ce6b403d12df47b2bc5133711241009'}&q=${encodeURIComponent(query)}`;
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            if (data && data.location && data.location.name) {
-                // Update the DOM with the city name from the API response
-                city.querySelector('figcaption').innerText = data.location.name;
-                city.querySelector('img').src='https://flagsapi.com/US/flat/64.png'
+            if (data && data.location && data.current) {
+
+                const city = document.querySelector('.city');
+                const temp = document.querySelector('#temp');
+                const tempDesc = document.querySelector("#description");
+                
+                if(city){
+                city.querySelector('figcaption').innerText = location.name;
+                city.querySelector('img').src='https://flagsapi.com/US/flat/64.png';
+                }
+
+                if(temp){
+                const icon = 'http:' + data.current.condition.icon;
+                temp.querySelector('img').src=icon;
+                temp.querySelector('figcaption span').innerText = data.current.temp_c;
+                }
+
+                if(tempDesc){
+                    tempDesc.innerText = data.current.condition.text;
+                }
+
+                clouds.innerText = data.current.cloud;
+                humidity.innerText = data.current.humidity;
+                pressure.innerText = data.current.pressure_mb;
+
             } else {
-                // Handle cases where the data doesn't contain the expected information
                 city.querySelector('figcaption').innerText = 'Location not found';
             }
         })
@@ -78,3 +76,6 @@ const searchWeather = (query) => {
             city.querySelector('figcaption').innerText = 'Error fetching weather data';
         });
 }
+
+
+//city name is not working 
