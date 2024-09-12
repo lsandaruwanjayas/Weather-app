@@ -44,25 +44,13 @@ const searchWeather = (query) => {
             console.log(data);
             if (data && data.location && data.current) {
 
-                const city = document.querySelector('.city');
-                const temp = document.querySelector('#temp');
-                const tempDesc = document.querySelector("#description");
-                
-                if(city){
                 city.querySelector('figcaption').innerText = data.location.name;
                 city.querySelector('img').src='https://flagsapi.com/US/flat/64.png';
-                }
 
-                if(temp){
                 const icon = 'http:' + data.current.condition.icon;
                 temp.querySelector('img').src=icon;
                 temp.querySelector('figcaption span').innerText = data.current.temp_c;
-                }
-
-                if(tempDesc){
-                    tempDesc.innerText = data.current.condition.text;
-                }
-
+                
                 clouds.innerText = data.current.cloud;
                 humidity.innerText = data.current.humidity;
                 pressure.innerText = data.current.pressure_mb;
