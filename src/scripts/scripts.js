@@ -50,6 +50,8 @@ const searchWeather = (query) => {
                 const icon = 'http:' + data.current.condition.icon;
                 temp.querySelector('img').src=icon;
                 temp.querySelector('figcaption span').innerText = data.current.temp_c;
+
+                description.innerText = data.current.condition.text;
                 
                 clouds.innerText = data.current.cloud;
                 humidity.innerText = data.current.humidity;
