@@ -36,7 +36,7 @@ form.addEventListener('submit', (event) => {
 
 const searchWeather = (query) => {
 
-    let url = `${'http://api.weatherapi.com/v1/current.json'}?key=${'ce6b403d12df47b2bc5133711241009'}&q=${encodeURIComponent(query)}`;
+    let url = `${'https://api.weatherapi.com/v1/current.json'}?key=${'ce6b403d12df47b2bc5133711241009'}&q=${encodeURIComponent(query)}`;
 
     fetch(url)
         .then(response => response.json())
