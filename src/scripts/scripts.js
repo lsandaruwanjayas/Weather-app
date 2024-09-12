@@ -49,7 +49,7 @@ const searchWeather = (query) => {
                 const tempDesc = document.querySelector("#description");
                 
                 if(city){
-                city.querySelector('figcaption').innerText = location.name;
+                city.querySelector('figcaption').innerText = data.location.name;
                 city.querySelector('img').src='https://flagsapi.com/US/flat/64.png';
                 }
 
@@ -78,4 +78,3 @@ const searchWeather = (query) => {
 }
 
 
-//city name is not working 
